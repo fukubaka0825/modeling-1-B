@@ -1,24 +1,37 @@
 package room
 
-import (
-	"errors"
+// Neme 部屋名
+type Name int
+
+const (
+	Susanoo = iota
+	Amaterasu
+	Tsukuyomi
+	Unknown
 )
 
-// Name 和名: 部屋名
-type Name struct {
-	value string
+func NameFrom(nameString string) Name {
+	switch nameString {
+	case "スサノオ":
+		return Susanoo
+	case "アマテラス":
+		return Amaterasu
+	case "ツクヨミ":
+		return Tsukuyomi
+	default:
+		return Unknown
+	}
 }
 
-// NewName : 部屋名はこの関数を通してインスタンス化します
-func NewName(name string) (*Name, error) {
+func (name Name) String() string {
 	switch name {
-	case "スサノオ":
-		return &Name{"スサノオ"}, nil
-	case "アマテラス":
-		return &Name{"アマテラス"}, nil
-	case "ツクヨミ":
-		return &Name{"ツクヨミ"}, nil
+	case Susanoo:
+		return "スサノオ"
+	case Amaterasu:
+		return "アマテラス"
+	case Tsukuyomi:
+		return "ツクヨミ"
 	default:
-		return nil, errors.New("invalid name: " + name)
+		return ""
 	}
 }
