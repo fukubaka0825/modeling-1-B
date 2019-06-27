@@ -9,14 +9,14 @@ type Room struct {
 	reservablePeriods *ReservablePeriods
 }
 
-// NewRoom : 会議室はこの関数を通してインスタンス化します
+// NewRoom コンストラクタ
 func NewRoom(roomName *Name, capacity int, startTime time.Time, finishTime time.Time) *Room {
 	// TODO
 	return nil
 }
 
-// Reserve: s予約を確保する
-func (room *Room) Reserve( /*Reservationで渡すと循環参照になる。バラで渡す?*/ ) bool {
+// Reserve 予約を確保する
+func (room *Room) Reserve( /*Reservationで渡すと循環参照になる。バラで渡す?パッケージわけしないほうがいい？*/ ) bool {
 	// TODO
 	return true
 }

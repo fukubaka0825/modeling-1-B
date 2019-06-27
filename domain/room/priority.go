@@ -1,8 +1,9 @@
 package room
 
-// 優先度
+// Priority 優先度
 type Priority int
 
+// 優先度設定
 const (
 	High Priority = iota
 	Low

@@ -4,10 +4,10 @@ import (
 	"time"
 )
 
-// 最小予約単位(分)
-const MinutesPerPeriod = 60
+// MinutesPerPeriod 最小予約時間(分)
+const MinutesPerPeriod = 30
 
-// Period 和名: 予約日時
+// Period 最小予約単位
 type Period struct {
 	from     time.Time
 	to       time.Time
@@ -15,8 +15,8 @@ type Period struct {
 	isVacant bool
 }
 
-// 予約時間
-func NePeriod(from time.Time, priority Priority, isVacant bool) *Period {
+// NewPeriod コンストラクタ
+func NewPeriod(from time.Time, priority Priority, isVacant bool) *Period {
 	to := from.Add(MinutesPerPeriod * time.Minute)
 	return &Period{from, to, priority, isVacant}
 }

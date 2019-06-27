@@ -1,15 +1,17 @@
 package room
 
-// Neme 部屋名
+// Name 部屋名
 type Name int
 
+// 部屋名定義
 const (
-	Susanoo = iota
+	Susanoo Name = iota
 	Amaterasu
 	Tsukuyomi
 	Unknown
 )
 
+// NameFrom 文字列からNameに変換する
 func NameFrom(nameString string) Name {
 	switch nameString {
 	case "スサノオ":
@@ -23,6 +25,7 @@ func NameFrom(nameString string) Name {
 	}
 }
 
+// String Nameを文字列化する
 func (name Name) String() string {
 	switch name {
 	case Susanoo:
