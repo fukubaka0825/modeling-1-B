@@ -1,20 +1,22 @@
 package room
 
-import "../../domain"
+import "time"
 
 // Room 和名: 会議室
 type Room struct {
-	roomName         *Name
-	reservablePeriod *ReservablePeriod
+	roomName          *Name
+	capacity          int
+	reservablePeriods *ReservablePeriods
 }
 
-// NewRoom : 会議室はこの関数を通してインスタンス化します
-func NewRoom(roomName *Name) *Room {
-	return &Room{roomName, NewReservablePeriod()}
+// NewRoom コンストラクタ
+func NewRoom(roomName *Name, capacity int, startTime time.Time, finishTime time.Time) *Room {
+	// TODO
+	return nil
 }
 
-// CanNotReserve 予約可能時間内ではないか
-func (room *Room) CanNotReserve(perod *domain.Period) bool {
-	// あとでがんばる
+// Reserve 予約を確保する
+func (room *Room) Reserve( /*Reservationで渡すと循環参照になる。バラで渡す?パッケージわけしないほうがいい？*/ ) bool {
+	// TODO
 	return true
 }
